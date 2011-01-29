@@ -1,0 +1,20 @@
+INSTALLATION
+============
+
+1. Put django_matplotlib on your Pyhton path
+
+2. Hook django_matplotlib to your URL configuration, e.g.:
+
+    urlpatterns = patterns('',
+        (r'^mpl/', include('django_matplotlib.urls')),
+        # ... more URLs here
+    )
+    
+If you have a special handler for common image extentions, such as .png, the
+default django_matplotlib URLs may not work for you. If this is the case you'll
+have to create your own definitions for URLs.
+
+3. Configure matplotlib settings (optional).
+
+django_matplotlib does not have models so it in not necessary to add it to your
+list of INSTALLED_APPS and hence you don't need to run syncdb.

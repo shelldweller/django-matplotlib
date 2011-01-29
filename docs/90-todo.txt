@@ -1,0 +1,17 @@
+TODO
+====
+
+More chart types must be supported.
+
+Interface to convert iterable data types into charts (e.g., dictionary into pie
+chart).
+
+Caching? Django's built in caching should do well but it hasn't been tested yet.
+
+Template tag support so that we can do something like this:
+
+    {% load matplotlib %}
+    {% pie x=mylist colors="r,g,b" labeldistance=0.5 as pie_url %}
+    <img src="{{ pie_url }}" atl="my cherry pie chart" />
+
+Error handling in not very graceful. Incorrect url params may cause server errors.

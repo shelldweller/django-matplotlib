@@ -1,0 +1,14 @@
+Label truncation
+================
+
+Long labels may be truncated which seems to be a common problem with
+automatic layout in matplotlib. A couple of things to address this:
+
+1. Decrease "font.size" in your MATPLOTLIB_RC_PARAMS (or resource file)
+
+2. Use new lines (URL escaped as `%0A`) instead of spaces in your labels. When
+generating labels automatically I find it quite handy to split long labels into
+multiple lines with python's built-in `textwrap` module.
+
+3. Increase image size.
+

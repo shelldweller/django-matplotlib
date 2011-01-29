@@ -1,0 +1,23 @@
+Generating matplotlib images from django
+========================================
+
+Basically there are two ways to do it:
+
+1. Generate an image in your view, save it to the media directory, construct its
+URL and pass it to template for rendering.
+
+2. Output image directly from a django view.
+
+At the moment this project primarily concentrates on the latter.
+
+
+Example of URL based access
+===========================
+
+Using this project one can easily generate images by entering query parameters
+in your faviourite browser's address bar. E.g. an address like this one will
+output a three colour pie chart in PNG format:
+
+    http://example.com/path-to-matplotlib-url/pie.png?x=1,2,3
+
+See next section for further details.

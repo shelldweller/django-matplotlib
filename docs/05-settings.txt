@@ -1,0 +1,46 @@
+SETTINGS
+========
+
+MATPLOTLIB_BACKEND
+------------------
+
+matplotlib backend. Defaults to "Agg".
+
+
+MATPLOTLIB_FORMATS
+------------------
+
+A dictionary whose keys are formats and values are corresponding content types.
+Only formats defined here can be used for output. Defaults to this dictionary:
+
+    {
+        "png" : "image/png",
+        "pdf" : "application/pdf",
+        "ps"  : "application/postscript",
+        "eps" : "application/postscript",
+        "svg" : "image/svg+xml"
+    }
+
+
+MPLCONFIGDIR
+------------
+
+Writable directory for matplotlib configuration data. You must either set
+MPLCONFIGDIR environmental variable or define MPLCONFIGDIR setting. Defaults
+to `/tmp` which may change in the future.
+
+
+MATPLOTLIB_RC_PARAMS
+--------------------
+
+An optional dictionary of matplotlib resource settings. If you have MATPLOTLIBRC
+environmental variable values defined in `MATPLOTLIB_RC_PARAMS` setting will
+override values in your resource file defined by the env. variable.
+
+Example:
+
+    MATPLOTLIB_RC_PARAMS = {
+        "font.size" : 8, # to set default font size
+    }
+
+Consult matplotlib documentation for the list of valid settings.

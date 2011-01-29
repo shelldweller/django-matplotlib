@@ -1,0 +1,162 @@
+URL structure
+=============
+
+By default URLs are in the format `<chart_type>.<format>?<params>` where
+`chart_type` is matplotlib plotting command, such as `pie` or `bar`, `format` is
+the desired output format, (e.g., "png" or "pdf"), and `params` are matplotlib-
+style parameters you normally pass to a corresponding plotting command, plus few
+extras.
+
+Because charts are generated based on URL input parameters this library gives
+you a rather limited choice as to what can be generated.
+
+
+URL Data Representation
+=======================
+
+Numbers
+-------
+
+Numeric representations containing dots will be converted to floats, otherwise
+integer conversion will take place.
+
+
+Strings
+-------
+
+No quoting required, but of course one must URL-escape them.
+
+
+Lists
+-----
+
+List members are separated by comas. For example:
+"1,2,3,4.5" will be converted to `[1,2,3,4.5]` and
+"value 1,value 2" will be converted to ["value 1", "value 2"]
+
+
+Booleans
+--------
+
+Use `1` for `True` and `0` for `False`
+
+
+Colour representation
+---------------------
+
+Same as im matplotlib: few named colours plus hexadecimal RGB representations.
+
+
+Generic parameters
+==================
+
+`ylabel`
+`xlabel`
+    String. Vertical and horiozntal labels for your chart
+
+`title`
+    String. Title to be displayed on the chart
+
+`legend`
+    Boolean. Show or hide legend.
+
+`grid`
+    Boolean. Show or hide grid.
+
+`figsize`
+    List of two elements. Size of the output image in inches, e.g.: "4,4"
+
+
+Chart types
+===========
+
+pie
+---
+
+`x` (required)
+    Numeric list of values to plot, e.g. "1,2,3,2.3"
+    
+`explode`
+    Numeric list of offsets for individual pie slices.
+    
+`labels`
+    List of strings to be used as labels.
+    
+`colors`
+    List of strings representing colours for each pie slice.
+    
+`autopct`
+    is a format string to show percentage of the wedge, e.g.: "%d" or "%.2f%%".
+    
+`pctdistance`
+    Numeric. The distance of percentage values from the center. If it is
+    greateer then 1 percentages will be placed outside the pie.
+
+`labeldistance`
+    is similar to `pctdistance` but for labels.
+
+`shadow`
+    Boolean. Whether or not to draw shadow.
+
+
+
+bar
+---
+
+`left` (required)
+    List of numbers. X coordinates of bars
+
+`height` (required)
+    List of numbers. Heights of tha bars.
+    
+`width`
+    Number. Widths of bars.
+    
+`bottom`
+    List of numbers. Bottom coordinates to offset bars up or down.
+
+`color`
+    List of colours or single colour to fill bars.
+    
+`edgecolor`
+    Like `color` but for edges.
+
+`xerr`
+`yerr`
+    List of numbers to mark to generate error bars
+    
+`ecolor`
+    Error ar colour
+    
+`capsize`
+    Length of error bar caps
+    
+`align`
+    "edge" or "center"
+    
+`log`
+    Boolean. If true - use log scale.
+    
+`antialiased`
+    Boolean
+    
+`fill`
+    Boolean. Whether or not colour fill the bars.
+    
+`hatch`
+    Hatch type for inside of bars.
+    One of: "/", "\\", "|", "-", "+", "x", "o", "O", ".", "*"
+    
+`label`
+    ???
+    
+`ls`
+    Line style for edges. One of: "solid", "dashed", "dashdot", "dotted"
+
+`lw`
+    Line width for edges
+
+Not supported: error_kw, orientation
+
+
+
