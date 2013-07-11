@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 from distutils.core import setup
 
-# Dynamically calculate the version based on mptt.VERSION
-
 setup(
     name = 'django-matplotlib',
     description = '''Django interface to matplotlib''',
